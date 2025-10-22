@@ -1,30 +1,14 @@
-# SGX-SecureAI
-The core creation of taxismart 
-##
+# SGX SecureAI™ Authentication Service
 
-SGX-SecureAI/
-│
-├── services/
-│   ├── auth-service/       # Node.js / TypeScript
-│   ├── kms-service/        # Python / FastAPI
-│   └── policy-engine/      # Optional OPA / ABAC
-│
-├── sdk/
-│   ├── nodejs-sdk/
-│   └── python-sdk/
-│
-├── infra/
-│   ├── terraform/          # KMS, Vault, Kubernetes
-│   └── helm-charts/        # For deployment
-│
-├── tests/
-│   ├── unit/
-│   ├── integration/
-│   └── security/
-│
-├── docs/
-│   ├── architecture/
-│   ├── compliance/
-│   └── runbooks/
-│
-└── README.md
+This is the **SGX SecureAI™ Authentication Service**, implementing OAuth2.0 + OpenID Connect, JWT token issuance, and Role-Based Access Control (RBAC). Built with **Node.js + TypeScript**.
+
+## Features
+
+- OAuth2.0 + OpenID Connect login
+- JWT token issuance and verification
+- Role-Based Access Control (admin, driver, partner, user)
+- Protected routes middleware
+- CI/CD ready scripts for build, test, and deployment
+
+## Project Structure
+
