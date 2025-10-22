@@ -12,3 +12,15 @@ This is the **SGX SecureAI™ Authentication Service**, implementing OAuth2.0 + 
 
 ## Project Structure
 
+src/
+index.ts # Server entry
+routes/
+oauth.ts # OAuth2 routes
+test.ts # RBAC test routes
+services/
+jwtService.ts # JWT token generation and verification
+middleware/
+rbac.ts # Role-based access control
+.env.example # Environment variables template
+package.json # Node.js dependencies and scripts
+README.md # Project documentation
