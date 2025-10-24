@@ -1,19 +1,16 @@
-// src/routes/test.ts
-import { Router } from 'express';
-import { authorize } from '../middleware/rbac';
+import { Router } from "express";
+import { authorize } from "../middleware/authorize";
 
 const router = Router();
 
-// Only admins can access this route
-router.get('/admin-only', authorize(['admin']), (req, res) => {
-  const user = (req as any).user;
-  res.json({ message: `Hello Admin ${user.sub}`, user });
+// Only admin can access
+router.get("/admin-only", authorize(["admin"]), (req, res) => {
+  res.json({ message: "Admin access granted" });
 });
 
-// Drivers and partners can access this
-router.get('/driver-partner', authorize(['driver', 'partner']), (req, res) => {
-  const user = (req as any).user;
-  res.json({ message: `Hello ${user.role} ${user.sub}`, user });
+// Public route
+router.get("/public", (req, res) => {
+  res.json({ message: "Public access" });
 });
 
-export { router as testRoutes };
+export default router;
